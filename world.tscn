@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b63kg0ji6xnrs"]
+
+[ext_resource type="Texture2D" uid="uid://cm25dflo7gdsp" path="res://textures/texture_01.png" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://cmcgq74o0ad5d" path="res://scenes/player.tscn" id="2_fj7yv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_top_color = Color(0.114421, 0.203467, 0.349081, 1)
+sky_horizon_color = Color(0.19113, 0.213391, 0.249795, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.19113, 0.213391, 0.249795, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.078
+volumetric_fog_albedo = Color(0.0807833, 0.0807833, 0.0807833, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_texture = ExtResource("1_f3sb7")
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+
+[node name="world" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aqk2v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.397089, 0)
+material_override = SubResource("StandardMaterial3D_fj7yv")
+use_collision = true
+size = Vector3(1000, 0.6, 1000)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
