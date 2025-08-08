@@ -16,7 +16,8 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
 		head.rotation.x = clampf(head.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-
+	if Input.is_action_pressed('ui_cancel'):
+		get_tree().quit()
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
