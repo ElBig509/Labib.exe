@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccaepbhkok664"]
+
+[ext_resource type="PackedScene" uid="uid://cqvimxgqiwcvc" path="res://bilel makteb/bilel.blend" id="1_a202f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="bilel" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(9.93584, 0, 0, 0, 1, 0, 0, 0, 6.03201, 50.2947, 163.014, 0.850287)
