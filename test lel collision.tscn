@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmk2ugftyjb1l"]
+
+[ext_resource type="PackedScene" uid="uid://dgew8ybwj7sfb" path="res://bilel.blend" id="1_vy5ol"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1jma"]
+size = Vector3(231.813, 1, 404.39)
+
+[node name="bilel" instance=ExtResource("1_vy5ol")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.14872, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33301, 14.6459, 1.48824)
+shape = SubResource("BoxShape3D_u1jma")
+debug_color = Color(0, 0, 1, 1)

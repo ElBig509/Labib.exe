@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://baw60goj1hnrq"]
+
+[ext_resource type="PackedScene" uid="uid://cmk2ugftyjb1l" path="res://test lel collision.tscn" id="2_0h7nl"]
+[ext_resource type="PackedScene" uid="uid://cmcgq74o0ad5d" path="res://scenes/player.tscn" id="2_mer1j"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="bilel" parent="." instance=ExtResource("2_0h7nl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.048, -14.0384, 0.611902)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_mer1j")]
+transform = Transform3D(1.14174, 0, 0, 0, 0.612475, 0, 0, 0, 0.729545, 211.692, -3.79911, -16.2836)
